@@ -1,0 +1,30 @@
+
+from fastapi import FastAPI
+from sqlalchemy import text
+
+from app.database import engine
+from app.routers.auth import router as auth_router
+
+app = FastAPI(
+    title="SharePlate API",
+    description="Food redistribution platform",
+    version="1.0.0"
+)
+
+app.include_router(auth_router)
+
+@app.get("/")
+def home():
+    return {
+        "message": "Welcome to SharePlate API"
+    }
+
+@app.get("/db-check")
+def check_database():
+
+    with engine.connect() as connection:
+        connection.execute(text("SELECT 1"))
+
+    return {
+        "message": "PostgreSQL connected successfully!"
+    }
