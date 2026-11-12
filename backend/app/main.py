@@ -1,7 +1,7 @@
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from sqlalchemy import text
-
+from app.exceptions.handlers import global_exception_handler
 from app.database import engine
 from app.routers.auth import router as auth_router
 from app.routers.donations import router as donations_router
@@ -13,6 +13,10 @@ app = FastAPI(
     title="SharePlate API",
     description="Food redistribution platform",
     version="1.0.0"
+)
+app.add_exception_handler(
+    Exception,
+    global_exception_handler
 )
 
 app.include_router(auth_router)
