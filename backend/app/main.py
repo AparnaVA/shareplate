@@ -4,6 +4,10 @@ from sqlalchemy import text
 
 from app.database import engine
 from app.routers.auth import router as auth_router
+from app.routers.donations import router as donations_router
+from app.utils.logger import configure_logging
+
+configure_logging()
 
 app = FastAPI(
     title="SharePlate API",
@@ -12,6 +16,7 @@ app = FastAPI(
 )
 
 app.include_router(auth_router)
+app.include_router(donations_router)
 
 @app.get("/")
 def home():
