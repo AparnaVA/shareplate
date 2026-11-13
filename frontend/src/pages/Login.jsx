@@ -2,9 +2,12 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import API_BASE_URL from "../services/api";
 import "./Login.css";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 function Login() {
   const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
 
   const [formData, setFormData] = useState({
     email: "",
@@ -47,10 +50,7 @@ function Login() {
         );
       }
 
-      localStorage.setItem(
-        "access_token",
-        responseData.access_token
-      );
+      
 
       // Get current user information
       const userResponse = await fetch(
@@ -70,10 +70,7 @@ function Login() {
         );
       }
 
-      localStorage.setItem(
-        "user",
-        JSON.stringify(userData)
-      );
+      login(userData, responseData.access_token);
 
       // Redirect based on user role
       if (userData.role === "DONOR") {

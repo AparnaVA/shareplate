@@ -1,0 +1,107 @@
+.available-page {
+  min-height: 100vh;
+  padding: 40px 24px;
+  background: linear-gradient(135deg, #f0fdf4, #eff6ff);
+}
+
+.available-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.available-header {
+  margin-bottom: 32px;
+}
+
+.available-header h1 {
+  margin: 0 0 8px;
+  font-size: 30px;
+}
+
+.available-header p {
+  margin: 0;
+  color: #64748b;
+}
+
+.available-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  );
+  gap: 20px;
+}
+
+.available-card {
+  padding: 24px;
+  background-color: white;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.available-card h2 {
+  margin: 0 0 12px;
+  font-size: 21px;
+}
+
+.available-description {
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.available-details {
+  padding: 14px 0;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  color: #475569;
+}
+
+.available-details p {
+  margin: 8px 0;
+}
+
+.claim-section {
+  margin-top: 18px;
+}
+
+.claim-section label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.claim-section input {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+}
+
+.claim-section input:focus {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+}
+
+.claim-button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #16a34a;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.claim-button:hover:not(:disabled) {
+  background-color: #15803d;
+}
+
+.claim-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
