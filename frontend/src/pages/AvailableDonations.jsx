@@ -23,7 +23,7 @@ function AvailableDonations() {
 
     try {
       const response = await fetch(
-        `${API_BASE_URL}api/donations`,
+        `${API_BASE_URL}/api/donations`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,

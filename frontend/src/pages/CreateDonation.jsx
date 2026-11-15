@@ -48,7 +48,7 @@ function CreateDonation() {
       };
 
       const response = await fetch(
-        `${API_BASE_URL}api/donations`,
+        `${API_BASE_URL}/api/donations`,
         {
           method: "POST",
           headers: {
