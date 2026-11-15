@@ -54,7 +54,7 @@ function Login() {
 
       // Get current user information
       const userResponse = await fetch(
-        `${API_BASE_URL}/api/auth/me`,
+        `${API_BASE_URL}api/auth/me`,
         {
           headers: {
             Authorization: `Bearer ${responseData.access_token}`,

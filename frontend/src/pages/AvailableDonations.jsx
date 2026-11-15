@@ -23,7 +23,7 @@ function AvailableDonations() {
 
     try {
       const response = await fetch(
-        `${API_BASE_URL}/api/donations`,
+        `${API_BASE_URL}api/donations`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -86,7 +86,7 @@ function AvailableDonations() {
       setClaimingId(donation.id);
 
       const response = await fetch(
-        `${API_BASE_URL}/api/donations/${donation.id}/claim`,
+        `${API_BASE_URL}api/donations/${donation.id}/claim`,
         {
           method: "POST",
           headers: {
